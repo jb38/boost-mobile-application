@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="edu.hood.boost" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Device">
+        <param name="browser-package" value="Device" />
+    </feature>
+    <name>Project BOOST</name>
+    <description>
+    An application to interact with Project BOOST temperature data loggers.
+  </description>
+    <author email="jb38@hood.edu" href="http://cs.hood.edu/">
+    Jim Blaney
+  </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="Orientation" value="default" />
+    <preference name="BackgroundColor" value="0xff2e608b" />
+    <preference name="DisallowOverscroll" value="true" />
+</widget>

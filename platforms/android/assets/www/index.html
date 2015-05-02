@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+        <title>Project BOOST Device Manager</title>
+
+        <link rel="stylesheet" type="text/css" href="ratchet/css/ratchet.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    </head>
+    <body>
+
+        <!-- BEGIN INDEX VIEW -->
+
+        <header class="bar bar-nav">
+          <a href="#aboutmodal" class="icon icon-info pull-right"></a>
+          <h1 class="title">
+            <img src="img/hood48.png" class="app-logo" />
+            Project BOOST
+          </h1>
+        </header>
+
+        <div class="content">
+          <div class="card">
+            <ul class="table-view" id="logger-list">
+              <li class="table-view-cell table-view-divider">
+                Devices
+                <button id="refresh-list-button" class="btn btn-link">
+                  <span class="icon icon-refresh"></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <ul class="table-view" id="file-list">
+              <li class="table-view-cell table-view-divider">
+                Files
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- END INDEX VIEW -->
+
+        <!-- BEGIN ABOUT MODAL -->
+
+        <div id="aboutmodal" class="modal">
+          <header class="bar bar-nav">
+            <a class="icon icon-close pull-right" href="#aboutmodal"></a>
+            <h1 class="title">
+              <img src="img/hood48.png" class="app-logo" />
+              About Project BOOST
+            </h1>
+          </header>
+          <div class="content">
+            <div class="content-padded">
+              <div class="centering">
+                <img src="img/hood-logo.png" class="about-logo" alt="Hood College">
+                <img src="img/state-farm-yab-logo.png" class="about-logo" alt="State Farm Youth Advisory Board">
+              </div>
+              <p class="justified">
+                Project BOOST, funded by the State Farm Youth
+                Advisory Board, is a multi-disciplinary research,
+                education and outreach program that provides
+                service-learning opportunities for students. The
+                grant supports the training of students and
+                teachers and the purchase of equipment and other
+                supplies needed for the research initiative.
+              </p>
+              <p class="justified">
+                Hood College faculty, staff and students in the
+                environmental and computer science programs, in
+                partnership with Frederick High School and Frederick
+                County Public School's Earth and Space Science Lab,
+                are monitoring the temperature of streams in the
+                Tuscarora watershed, and identifying those that
+                maintain the optimal temperature and are the best
+                potential habitats for Eastern Brook Trout
+                restoration efforts. Frederick High School students
+                enrolled in environmental science classes are raising
+                trout in their classrooms and releasing them into a
+                suitable stream.
+              </p>
+              <p class="justified">
+                Due to rapid urbanization, water temperatures in many
+                tributaries within the Tuscarora watershed have
+                increased, which has led to a decline in Eastern
+                Brook Trout populations there. Future plans include
+                stream restoration based on the results of these
+                studies.
+              </p>
+              <p class="centering">
+                <img class="full-width" src="img/trout-brook.png" alt="Brook Trout">
+                <span class="label">Brook Trout</span>
+              </p>
+              <hr>
+              <p class="centering">
+                <strong>Center for Coastal and Watershed Studies</strong><br>
+                <strong>Hood College</strong><br>
+                401 Rosemont Ave<br>
+                Frederick, MD 21701<br>
+                <a class="website" href="http://ccws.hood.edu/">http://ccws.hood.edu/</a><br>
+                <a class="telephone" href="tel:3016963318">(301) 696-3318</a><br>
+                <a class="email" href="mailto:dferrier@hood.edu;hudson@hood.edu">Contact via Email</a>
+              </p>
+              <p class="centering">
+                in conjunction with
+              </p>
+              <p class="centering">
+                <strong>Department of Computer Science &amp;<br>Information Technology</strong><br>
+                <strong>Hood College</strong><br>
+                401 Rosemont Ave<br>
+                Frederick, MD 21701<br>
+                <a class="website" href="http://cs.hood.edu/">http://cs.hood.edu/</a><br>
+                <a class="telephone" href="tel:3016633131">(301) 663-3131</a><br>
+                <a class="email" href="mailto:cs@hood.edu">Contact via Email</a>
+              </p>
+              <hr>
+              <p class="justified"><em>
+                State Farm and its affiliates is the largest provider
+                of car insurance in the U.S. and is a leading insurer
+                in Canada. They serve nearly 84 million policies and
+                accounts.
+              </em></p>
+              <p class="justified"><em>
+                Collected temperature data and other information about the hardware
+                and software used in this project can be found at
+                <a class="website" href="http://boost.hood.edu/boost/">http://boost.hood.edu/boost/</a>
+              </em></p>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- END ABOUT MODAL -->
+
+        <!-- BEGIN DEVICE MANAGEMENT MODAL -->
+
+        <div id="devicemodal" class="modal">
+          <header class="bar bar-nav">
+            <!-- a class="icon icon-close pull-right" href="#devicemodal"></a -->
+            <h1 class="title">
+              <img src="img/hood48.png" class="app-logo" />
+              Project BOOST Device
+            </h1>
+          </header>
+          <div class="content">
+
+            <div class="card">
+              <ul class="table-view" id="logger-list">
+                <li class="table-view-cell table-view-divider">
+                  Device Information
+                  <button id="refresh-device-data" class="btn btn-link disable-on-download">
+                    <span class="icon icon-refresh"></span>
+                  </button>
+                </li>
+                <li class="table-view-cell">
+                  <span class="field-title">Name</span>
+                  <span data-model-device="name"></span>
+                </li>
+                <!-- li class="table-view-cell">
+                  <span class="field-title">RSSI</span>
+                  <span data-model-device="rssi"></span>
+                </li -->
+                <!-- li class="table-view-cell">
+                  <span class="field-title">Advertising</span>
+                  <span data-model-device="advertising"></span>
+                </li -->
+                <!-- li class="table-view-cell">
+                  <span class="field-title">UUID</span>
+                  <span data-model-device="uuid"></span>
+                </li -->
+                <li class="table-view-cell">
+                  <span class="field-title">Battery</span>
+                  <span id="device-battery"></span>
+                </li>
+                <li class="table-view-cell">
+                  <span class="field-title">Temp.&nbsp;</span>
+                  <span id="device-temperature"></span>
+                </li>
+                <li class="table-view-cell">
+                  <span class="field-title">Time</span>
+                  <span id="device-time"></span>
+                  <button id="set-device-time" class="btn btn-link disable-on-download"><span class='icon icon-compose'></span></button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="content-padded">
+              <button id="get-device-data" class="btn btn-block btn-hood disable-on-download">Download Data</button>
+            </div>
+
+            <div class="bar bar-standard bar-footer">
+              <button class="btn btn-block disable-on-download" id="disconnect-button">
+                Disconnect
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- END DEVICE MANAGEMENT MODAL -->
+
+        <div id="loginmodal" class="modal">
+
+          <header class="bar bar-nav">
+            <a class="icon icon-close pull-right" href="#loginmodal"></a>
+            <h1 class="title">
+              <img src="img/hood48.png" class="app-logo" />
+              Project BOOST Log In
+            </h1>
+          </header>
+
+          <div class="content">
+
+            <div class="card">
+              <form id="loginform" class="input-group">
+                <div class="input-row">
+                  <label>Username</label>
+                  <input type="text" name="username" placeholder="required">
+                </div>
+                <div class="input-row">
+                  <label>Password</label>
+                  <input type="password" name="password" placeholder="required">
+                </div>
+              </form>
+            </div>
+
+            <div class="content-padded">
+              <button id="btnLogin" class="btn btn-block btn-hood">Log In</button>
+              <button id="btnRegistration" class="btn btn-block btn-link">Register</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="registermodal" class="modal">
+          <header class="bar bar-nav">
+            <a class="icon icon-close pull-right" href="#registermodal"></a>
+            <h1 class="title">
+              <img src="img/hood48.png" class="app-logo" />
+              Project BOOST Registration
+            </h1>
+          </header>
+
+          <div class="content">
+
+            <div class="card">
+              <form id="registerform" class="input-group">
+                <div class="input-row">
+                  <label>Name</label>
+                  <input type="text" name="name" placeholder="required">
+                </div>
+                <div class="input-row">
+                  <label>Organization</label>
+                  <input type="text" name="organization" placeholder="required">
+                </div>
+                <div class="input-row">
+                  <label>Phone</label>
+                  <input type="text" name="phone" placeholder="required">
+                </div>
+                <div class="input-row">
+                  <label>Username</label>
+                  <input type="text" name="email" placeholder="required">
+                </div>
+                <div class="input-row">
+                  <label>Password</label>
+                  <input type="password" name="password" placeholder="required">
+                </div>
+              </form>
+            </div>
+
+            <div class="content-padded">
+              <button id="btnRegister" class="btn btn-block btn-hood">Register</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="graphmodal" class="modal">
+          <header class="bar bar-nav">
+            <a class="icon icon-close pull-right disable-on-upload" href="#graphmodal"></a>
+            <h1 class="title">
+              <img src="img/hood48.png" class="app-logo" />
+              Project BOOST Data
+            </h1>
+          </header>
+          <div class="content">
+            <div id="graph"></div>
+          </div>
+          <div class="bar bar-standard bar-footer-secondary show-on-upload">
+            <button disabled id="uploadprogress" class="btn btn-link btn-block"></button>
+          </div>
+          <div class="bar bar-standard bar-footer">
+            <button id="btnsendfile" class="btn btn-link pull-left disable-on-upload"><span class="icon icon-compose"></span></button>
+            <button id="btnuploadfile" class="btn btn-link pull-left disable-on-upload"><span class="icon icon-share"></span></button>
+            <button id="btndeletefile" class="btn btn-link pull-right disable-on-upload"><span class="icon icon-trash"></span></button>
+          </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="jquery/js/jquery.min.js"></script>
+        <script type="text/javascript" src="ratchet/js/ratchet.min.js"></script>
+        <script type="text/javascript" src="highstock/highstock.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>

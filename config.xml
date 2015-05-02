@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="edu.hood.boost" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Project BOOST</name>
+  <description>
+    An application to interact with Project BOOST temperature data loggers.
+  </description>
+  <author email="jb38@hood.edu" href="http://cs.hood.edu/">
+    Jim Blaney
+  </author>
+  <content src="index.html" />
+  <access origin="*" />
+  <!-- preference name="Fullscreen" value="true" / -->
+  <preference name="Orientation" value="default" />
+  <preference name="BackgroundColor" value="0xff2e608b" />
+  <preference name="DisallowOverscroll" value="true"/>
+
+  <platform name="android">
+    <icon src="res/hood96.png" />
+    <icon src="res/hood96.png" width="96" height="96" density="xhdpi" />
+    <icon src="res/hood72.png" width="72" height="72" density="hdpi" />
+    <icon src="res/hood48.png" width="48" height="48" density="mdpi" />
+    <icon src="res/hood36.png" width="36" height="36" density="ldpi" />
+  </platform>
+
+  <platform name="ios">
+    <preference name="BackupWebStorage" value="local" />
+
+    <!-- iOS 8.0+ -->
+    <!-- iPhone 6 Plus  -->
+    <icon src="res/hood180.png" width="180" height="180" />
+    <!-- iOS 7.0+ -->
+    <!-- iPhone / iPod Touch  -->
+    <icon src="res/hood60.png" width="60" height="60" />
+    <icon src="res/hood120.png" width="120" height="120" />
+    <!-- iPad -->
+    <icon src="res/hood76.png" width="76" height="76" />
+    <icon src="res/hood152.png" width="152" height="152" />
+    <!-- iOS 6.1 -->
+    <!-- Spotlight Icon -->
+    <icon src="res/hood40.png" width="40" height="40" />
+    <icon src="res/hood80.png" width="80" height="80" />
+    <!-- iPhone / iPod Touch -->
+    <icon src="res/hood57.png" width="57" height="57" />
+    <icon src="res/hood114.png" width="114" height="114" />
+    <!-- iPad -->
+    <icon src="res/hood72.png" width="72" height="72" />
+    <icon src="res/hood144.png" width="144" height="144" />
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="res/hood29.png" width="29" height="29" />
+    <icon src="res/hood58.png" width="58" height="58" />
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="res/hood50.png" width="50" height="50" />
+    <icon src="res/hood100.png" width="100" height="100" />
+   </platform>
+</widget>

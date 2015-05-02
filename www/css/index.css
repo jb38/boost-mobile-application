@@ -1,0 +1,201 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+ * {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
+ }
+
+.title img {
+  vertical-align: middle;
+}
+
+h1.title {
+  color: #2F5E8C !important;
+}
+
+.bar * {
+  color: #2F5E8C !important;
+}
+
+.bar a {
+  color: #2F5E8C !important;
+}
+
+.app-logo {
+  height: 24px;
+  width: 24px;
+}
+
+.scanning,
+.spinning {
+  animation-name: spin;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 2500ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 2500ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 2500ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
+
+.error {
+  font-style: italic;
+  color: #faa;
+}
+
+.field-title {
+  width: 40%;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.battery-good {
+  color: #228B22;
+}
+
+.battery-okay {
+  color: #FF8C00;
+}
+
+.battery-bad {
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.btn-container {
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btn-hood {
+  border: 0 !important;
+  color: white !important;
+  background-color: #2F5E8C !important;
+}
+
+.btn-link {
+  color: #2F5E8C !important;
+}
+
+#device-time,
+#device-temperature {
+  font-size: 0.7em;
+}
+
+#aboutmodal {
+  z-index: 30;
+}
+
+#devicemodal {
+  z-index: 60;
+}
+
+#graphmodal {
+  z-index: 70;
+}
+
+#loginmodal {
+  z-index: 80;
+}
+
+#registermodal {
+  z-index: 90;
+}
+
+/* https://github.com/twbs/ratchet/issues/679 */
+header.bar.bar-nav { -webkit-transform: translateZ(0); }
+.bar.bar-header-secondary{ -webkit-transform: translateZ(0); }
+.bar.bar-footer{ -webkit-transform: translateZ(0); }
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.about-logo {
+  width: 40%;
+}
+
+.centering {
+  text-align: center;
+}
+
+.full-width {
+  width: 95%;
+}
+
+img + .label {
+  color: #aaa;
+}
+
+.justified {
+  text-align: justify;
+}
+
+li button.btn-link {
+  text-align: right !important;
+  padding: 0 !important;
+  font-size: 18px !important;
+  color: #333 !important;
+}
+
+.btn {
+  transition: opacity 100ms ease-in-out;
+  -webkit-transition: opacity 100ms ease-in-out;
+  -moz-transition: opacity 100ms ease-in-out;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.show-on-upload {
+  display: none;
+  z-index: 99;
+}
+
+.show-on-upload.visible {
+  display: initial;
+}
+
+.progrecss {
+  width: 100%;
+  text-align: center;
+}

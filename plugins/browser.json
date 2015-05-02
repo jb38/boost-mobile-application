@@ -1,0 +1,50 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"browser-package\" value=\"Device\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.megster.cordova.rfduino": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "de.appplant.cordova.plugin.email-composer": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        }
+    },
+    "dependent_plugins": {}
+}
