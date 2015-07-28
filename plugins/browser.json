@@ -44,6 +44,9 @@
         },
         "org.apache.cordova.inappbrowser": {
             "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "edu.hood.boost"
         }
     },
     "dependent_plugins": {}

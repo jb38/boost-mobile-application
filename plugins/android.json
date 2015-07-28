@@ -15,7 +15,23 @@
                     ],
                     "/*": [
                         {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.emailcomposer.EmailComposer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
                         },
                         {
@@ -27,19 +43,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.emailcomposer.EmailComposer\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -63,11 +67,15 @@
                     ],
                     "/*": [
                         {
+                            "xml": "<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -77,22 +85,7 @@
     },
     "installed_plugins": {
         "com.megster.cordova.rfduino": {
-            "PACKAGE_NAME": "edu.hood.blaney"
-        },
-        "org.apache.cordova.console": {
-            "PACKAGE_NAME": "edu.hood.blaney"
-        },
-        "org.apache.cordova.dialogs": {
-            "PACKAGE_NAME": "edu.hood.blaney"
-        },
-        "org.apache.cordova.network-information": {
-            "PACKAGE_NAME": "edu.hood.blaney"
-        },
-        "org.apache.cordova.statusbar": {
-            "PACKAGE_NAME": "edu.hood.blaney"
-        },
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "edu.hood.blaney"
+            "PACKAGE_NAME": "edu.hood.boost"
         },
         "de.appplant.cordova.plugin.email-composer": {
             "PACKAGE_NAME": "edu.hood.boost"
@@ -100,7 +93,25 @@
         "mx.ferreyra.callnumber": {
             "PACKAGE_NAME": "edu.hood.boost"
         },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
         "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "edu.hood.boost"
+        },
+        "org.apache.cordova.file": {
             "PACKAGE_NAME": "edu.hood.boost"
         }
     },

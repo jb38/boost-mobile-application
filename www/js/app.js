@@ -169,8 +169,7 @@ var app = {
 
     $("input[name='username']", "#loginform").val(localStorage.getItem("boost_user"));
     $("input[name='password']", "#loginform").val(localStorage.getItem("boost_pass"));
-
-
+    
     // attach the graph view button click handlers
     $("button#btndeletefile").on("click", app.deleteFile);
     $("button#btnsendfile").on("click", app.sendFile);
@@ -362,7 +361,7 @@ var app = {
     };
 
     $("#get-device-data").on("click", function() {
-      rfduino.isConnected(function() {
+      //rfduino.isConnected(function() {
 
         $("button.disable-on-download").prop("disabled", true);
         app.sendCommand(app.commands.XFER_DATA, "", true)
@@ -392,13 +391,14 @@ var app = {
               app.sendCommand(app.commands.XFER_DATA2, "", true).then(cont, app.onError);
             });
           }, app.onError);
-      });
+      //});
     });
   },
 
   // request the filesystem
   initFileSystem: function() {
-
+    console.log("initFileSystem");
+    
     requestFileSystem(LocalFileSystem.PERSISTENT, app.fileSystemRequestSize, function(fs) {
 
       // retain reference to the file system root
@@ -406,20 +406,20 @@ var app = {
 
       // build the /edu/hood/boost folder path
       fs.root.getDirectory("edu", { create: true }, function(dir) {
-        dir.getDirectory("hood", { create: true }, function(dir) {
-          dir.getDirectory("boost", { create: true }, function(dir) {
+        dir.getDirectory("hood", { create: true }, function (dir) {
+          dir.getDirectory("boost", { create: true }, function (dir) {
 
             // retain reference to the edu/hood/boost folder entry
             app._rootDir = dir;
 
             // read the files currently in the directory
             var reader = dir.createReader();
-            reader.readEntries(function(files) {
+            reader.readEntries(function (files) {
 
               files = [].concat(files);
 
               // ignore directories (there shouldn't be any...)
-              files = files.filter(function(file) {
+              files = files.filter(function (file) {
                 return !file.isDirectory;
               });
 
@@ -431,10 +431,10 @@ var app = {
                 // add the file to the list of files
                 files.forEach(app.addFile);
               }
-            });
-          });
-        })
-      });
+            }, app.onError);
+          }, app.onError);
+        }, app.onError);
+      }, app.onError);
     }, app.onError);
   },
 
@@ -457,6 +457,14 @@ var app = {
     app.injectDeviceStylesheet();
     app.fixAppleStatusBar();
 
+    app.bindTrivialEvents();
+
+    app.initDownload();
+    
+    app.refreshDeviceList();
+    
+    app.initFileSystem();
+    
     Highcharts.setOptions({
       global: {
         getTimezoneOffset: function() {
@@ -464,13 +472,7 @@ var app = {
         }
       }
     });
-
-    app.bindTrivialEvents();
-
-    app.initFileSystem();
-    app.initDownload();
-
-    app.refreshDeviceList();
+    
   },
 
   onDiscoverDevice: function(device) {
